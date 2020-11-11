@@ -1,0 +1,3 @@
+python-twitter>=3.5
+python-decouple>=3.3
+

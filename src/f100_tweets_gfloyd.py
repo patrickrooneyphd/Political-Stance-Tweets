@@ -2,7 +2,7 @@
 # f100_tweets_gfloyd.py
 #
 # Author: Patrick Rooney
-# Desc: Scrapes all tweets from Fortune 100 CEOs and company accounts in two week window before and after
+# Desc: Scrapes all tweets from Fortune 100 CEOs and company accounts in three week window before and after
 # George Floyd killing in Minneapolis (May 25, 2020).
 #
 # Code Ref: https://github.com/bear/python-twitter/commit/090ff41234c5629391b0615e9bce56bc9d76a8e8
@@ -16,46 +16,39 @@ keys.py should contain the imported variables.
 """
 
 # Test with Tim Cook (@tim_cook) and Jeff Bezos (@JeffBezos) in list.
+# Current setup is to add the names in the CLI,
 
 from __future__ import print_function
 
 import json
-import sys
 
-import twitter
-from keys import ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET
+import tweepy
+import datetime
+from keys import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
+# from accounts import *
+
+# Creating the authentication object:
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+# Setting your access token and secret
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+# Creating the API object while passing in the auth information
+api = tweepy.API(auth)
+
+# Base Case: Get Date.Time and Tweets from one account.
+username = 'tim_cook'
+start_date = datetime.datetime(2020, 5, 4, 0, 0, 0)
+end_date = datetime.datetime(2020, 6, 15, 0, 0, 0)
+
+tweets = {}
+
+tmpTweets = api.user_timeline(username)  # Get all tweets from user timeline
+for tweet in tmpTweets:
+    if tweet.created_at < end_date and tweet.created_at > start_date:
+        tweets.update({tweet.created_at: tweet.text})
 
 
-def get_tweets(api=None, screen_name=None):
-    timeline = api.GetUserTimeline(screen_name=screen_name, count=200)
-    earliest_tweet = min(timeline, key=lambda x: x.id).id
-    print("getting tweets before:", earliest_tweet)
-
-    while True:
-        tweets = api.GetUserTimeline(
-            screen_name=screen_name, max_id=earliest_tweet, count=200
-        )
-        new_earliest = min(tweets, key=lambda x: x.id).id
-
-        if not tweets or new_earliest == earliest_tweet:
-            break
-        else:
-            earliest_tweet = new_earliest
-            print("getting tweets before:", earliest_tweet)
-            timeline += tweets
-
-    return timeline
-
-
-if __name__ == "__main__":
-    api = twitter.Api(
-        CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
-    )
-    screen_name = sys.argv[1]
-    print(screen_name)
-    timeline = get_tweets(api=api, screen_name=screen_name)
-
-    with open('data/cook_bezos_example.json', 'w+') as f:
-        for tweet in timeline:
-            f.write(json.dumps(tweet._json))
-            f.write('\n')
+while tmpTweets[-1].created_at > start_date:
+    tmpTweets = api.user_timeline(username, max_id = tmpTweets[-1].id)  # Find the id of last tweet
+    for tweet in tmpTweets:
+        if tweet.created_at < end_date and tweet.created_at > start_date:
+            tweets.update({tweet.created_at: tweet.text})

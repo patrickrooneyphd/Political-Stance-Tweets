@@ -4,5 +4,6 @@
 # Desc: Lists of all accounts to scrape
 #
 
-ceos = {'apple': "tim_cook"}
-
+ceos = {"tim_cook": "APPLE INC", "JeffBezos": "AMAZON.COM INC", "sundarpichai": "ALPHABET INC",
+        "satyanadella": "MICROSOFT CORP",
+        }

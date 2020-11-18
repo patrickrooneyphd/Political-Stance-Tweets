@@ -5,24 +5,19 @@
 # Desc: Scrapes all tweets from Fortune 100 CEOs and company accounts in three week window before and after
 # George Floyd killing in Minneapolis (May 25, 2020).
 #
-# Code Ref: https://github.com/bear/python-twitter/commit/090ff41234c5629391b0615e9bce56bc9d76a8e8
+# Code Ref: https://www.kdnuggets.com/2016/06/mining-twitter-data-python-part-1.html
 
 """
 Downloads all tweets from a given user.
-Uses twitter.Api.GetUserTimeline to retrieve the last 3,200 tweets from a user.
-Twitter doesn't allow retrieving more tweets than this through the API, so we get
-as many as possible.
+Uses twitter.Api.GetUserTimeline to retrieve the last set of tweets from a user.
 keys.py should contain the imported variables.
 """
 
-# Test with Tim Cook (@tim_cook) and Jeff Bezos (@JeffBezos) in list.
-# Current setup is to add the names in the CLI,
 
 from __future__ import print_function
 
 import json
 import os
-import pandas as pd
 
 import tweepy
 import datetime

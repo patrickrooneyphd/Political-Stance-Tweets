@@ -2,3 +2,5 @@
 .env
 .venv
 .general_setup
+cook_tweets.csv
+cook_tweets.json

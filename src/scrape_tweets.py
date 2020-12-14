@@ -31,17 +31,21 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Creating the API object while passing in the auth information
 api = tweepy.API(auth)
 
-# Base Case: Get Date.Time and Tweets from one account.
+# Get CEOs and Corporate Accounts from accounts.py
 usernames = list(ceos.keys())
+
+# Set start and end Dates three weeks before/after G. Floyd Shooting (May 25, 2020)
 start_date = datetime.datetime(2020, 5, 4, 0, 0, 0)
 end_date = datetime.datetime(2020, 6, 15, 0, 0, 0)
 
+# Create objects for list of tweets, ouput file, output directory, open output file
 tweets = []
 file_name = 'test_tweets.json'
 output_dir = os.path.join(os.getcwd() + '/data/')
 os.chdir(output_dir)
 output = open(file_name, "w")
 
+# Scrape tweets around a certain date:
 for username in usernames:
     tmpTweets = api.user_timeline(username, tweet_mode='extended')  # Get all tweets from user timeline
     for tweet in tmpTweets:

@@ -6,12 +6,11 @@
 
 ceos = {"sundarpichai": "ALPHABET INC", "JeffBezos": "AMAZON.COM INC", "tim_cook": "APPLE INC",
         "ChuckRobbins": "CISCO SYSTEMS INC", "LarryMerloCVS": "CVS HEALTH CORP", "MichaelDell": "DELL TECHNOLOGIES INC",
-        "RobertIger": "DISNEY (WALT) CO", "JimFitterling": "DOW INC", "larryculpjr": "GENERAL ELECTRIC CO",
-        "mtbarra": "GENERAL MOTORS CO", "DavidSolomon": "GOLDMAN SACHS GROUP INC",
-        "Samuel_HazenHCA": "HCA HEALTHCARE INC", "BruceDBroussard": "HUMANA INC", "BobSwan": "INTEL CORP",
-        "GinniRometty": "INTL BUSINESS MACHINES CORP", "MarvinREllison": "LOWE'S COS INC",
+        "RobertIger": "DISNEY (WALT) CO", "JimFitterling": "DOW INC",
+        "mtbarra": "GENERAL MOTORS CO", "BobSwan": "INTEL CORP",
+        "MarvinREllison": "LOWE'S COS INC",
         "satyanadella": "MICROSOFT CORP", "ramonlaguarta": "PEPSICO INC", "AlbertBourla": "PFIZER INC",
-        "TysonFoodsCEO": "TYSON FOODS INC  -CL A", "CarolBTome": "UNITED PARCEL SERVICE INC",
+        "CarolBTome": "UNITED PARCEL SERVICE INC",
         "hansvestberg": "VERIZON COMMUNICATIONS INC"
         }
 
@@ -48,6 +47,11 @@ companies = {"abbvie": "ABBVIE INC", "Allstate": "ALLSTATE CORP", "Google": "ALP
              "Verizon": "VERIZON COMMUNICATIONS INC", "WBA_Global": "WALGREENS BOOTS ALLIANCE INC",
              "WalmartInc": "WALMART INC", "WellsFargo": "WELLS FARGO & CO", "world_fuel": "WORLD FUEL SERVICES CORP"
             }
+
+empty_ceo_accounts = {"larryculpjr": "GENERAL ELECTRIC CO", "DavidSolomon": "GOLDMAN SACHS GROUP INC",
+                      "Samuel_HazenHCA": "HCA HEALTHCARE INC", "GinniRometty": "INTL BUSINESS MACHINES CORP",
+                      "BruceDBroussard": "HUMANA INC", "TysonFoodsCEO": "TYSON FOODS INC  -CL A",
+                      }
 
 # Interesting Notes:
 # GOOG has public policy team (@googlepubpolicy)

@@ -32,7 +32,7 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 # Get CEOs and Corporate Accounts from accounts.py
-usernames = list(ceos.keys())
+usernames = list(combined_accounts.keys())
 
 # Set start and end Dates three weeks before/after G. Floyd Shooting (May 25, 2020)
 start_date = datetime.datetime(2020, 5, 4, 0, 0, 0)
@@ -66,6 +66,7 @@ for username in usernames:
                 tweets.append(tweet)
                 print(tweets)
         while tmpTweets[-1].created_at > start_date:
+            print('Scraping ' + username)
             tmpTweets = api.user_timeline(username, max_id=tmpTweets[-1].id, tweet_mode='extended')  # Find tweet id
             for tweet in tmpTweets:
                 if tweet.created_at < end_date and tweet.created_at > start_date:

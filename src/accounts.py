@@ -7,10 +7,9 @@
 ceos = {"sundarpichai": "ALPHABET INC", "JeffBezos": "AMAZON.COM INC", "tim_cook": "APPLE INC",
         "ChuckRobbins": "CISCO SYSTEMS INC", "LarryMerloCVS": "CVS HEALTH CORP", "MichaelDell": "DELL TECHNOLOGIES INC",
         "RobertIger": "DISNEY (WALT) CO", "JimFitterling": "DOW INC",
-        "mtbarra": "GENERAL MOTORS CO", "BobSwan": "INTEL CORP",
+        "mtbarra": "GENERAL MOTORS CO",
         "MarvinREllison": "LOWE'S COS INC",
         "satyanadella": "MICROSOFT CORP", "ramonlaguarta": "PEPSICO INC", "AlbertBourla": "PFIZER INC",
-        "CarolBTome": "UNITED PARCEL SERVICE INC",
         "hansvestberg": "VERIZON COMMUNICATIONS INC"
         }
 
@@ -48,9 +47,15 @@ companies = {"abbvie": "ABBVIE INC", "Allstate": "ALLSTATE CORP", "Google": "ALP
              "WalmartInc": "WALMART INC", "WellsFargo": "WELLS FARGO & CO", "world_fuel": "WORLD FUEL SERVICES CORP"
             }
 
+combined_accounts = dict()
+combined_accounts.update(ceos)
+combined_accounts.update(companies)
+
+
 empty_ceo_accounts = {"larryculpjr": "GENERAL ELECTRIC CO", "DavidSolomon": "GOLDMAN SACHS GROUP INC",
                       "Samuel_HazenHCA": "HCA HEALTHCARE INC", "GinniRometty": "INTL BUSINESS MACHINES CORP",
-                      "BruceDBroussard": "HUMANA INC", "TysonFoodsCEO": "TYSON FOODS INC  -CL A",
+                      "BruceDBroussard": "HUMANA INC", "BobSwan": "INTEL CORP",
+                      "TysonFoodsCEO": "TYSON FOODS INC  -CL A", "CarolBTome": "UNITED PARCEL SERVICE INC",
                       }
 
 # Interesting Notes:

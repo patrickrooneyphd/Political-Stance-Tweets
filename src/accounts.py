@@ -12,11 +12,11 @@ ceos = {"sundarpichai": "ALPHABET INC", "JeffBezos": "AMAZON.COM INC", "tim_cook
         "satyanadella": "MICROSOFT CORP", "ramonlaguarta": "PEPSICO INC", "AlbertBourla": "PFIZER INC",
         "hansvestberg": "VERIZON COMMUNICATIONS INC"
         }
-
+#
 companies = {"abbvie": "ABBVIE INC", "Allstate": "ALLSTATE CORP", "Google": "ALPHABET INC",
              "amazon": "AMAZON.COM INC", "AmericanAir": "AMERICAN AIRLINES GROUP INC",
              "AmericanExpress": "AMERICAN EXPRESS CO", "AIGinsurance": "AMERICAN INTERNATIONAL GROUP",
-             "Healthcare_ABC": "AMERISOURCEBERGEN CORP", "AnthemInc": "ANTHEM INC", "Apple": "APPLE INC",
+             "Healthcare_ABC": "AMERISOURCEBERGEN CORP", "AnthemInc": "ANTHEM INC",
              "ADMupdates": "ARCHER-DANIELS-MIDLAND CO", "ATT": "AT&T INC", "BankofAmerica": "BANK OF AMERICA CORP",
              "BestBuy": "BEST BUY CO INC", "Boeing": "BOEING CO", "CapitalOne": "CAPITAL ONE FINANCIAL CORP",
              "cardinalhealth": "CARDINAL HEALTH INC", "CATERPILLAR INC": "CaterpillarInc", "Centene": "CENTENE CORP",
@@ -32,7 +32,7 @@ companies = {"abbvie": "ABBVIE INC", "Allstate": "ALLSTATE CORP", "Google": "ALP
              "GM": "GENERAL MOTORS CO", "GoldmanSachs": "GOLDMAN SACHS GROUP INC",
              "HCAhealthcare": "HCA HEALTHCARE INC", "HelmerichPayne": "HELMERICH & PAYNE",
              "HomeDepot": "HOME DEPOT INC", "honeywell": "HONEYWELL INTERNATIONAL INC", "Humana": "HUMANA INC",
-             "intel": "INTEL CORP", "IBM": "INTL BUSINESS MACHINES CORP", "jnjnews": "JOHNSON & JOHNSON",
+             "intel": "INTEL CORP", "IBM": "INTL BUSINESS MACHINES CORP", "JNJNews": "JOHNSON & JOHNSON",
              "jpmorgan": "JPMORGAN CHASE & CO", "kroger": "KROGER CO", "LockheedMartin": "LOCKHEED MARTIN CORP",
              "Lowes": "LOWE'S COS INC", "MarathonPetroCo": "MARATHON PETROLEUM CORP", "McKesson": "MCKESSON CORP",
              "Merck": "MERCK & CO", "MetLife": "METLIFE INC", "Microsoft": "MICROSOFT CORP",
@@ -44,7 +44,7 @@ companies = {"abbvie": "ABBVIE INC", "Allstate": "ALLSTATE CORP", "Google": "ALP
              "united": "UNITED AIRLINES HOLDINGS INC", "UPS": "UNITED PARCEL SERVICE INC",
              "UnitedHealthGrp": "UNITEDHEALTH GROUP INC", "ValeroEnergy": "VALERO ENERGY CORP",
              "Verizon": "VERIZON COMMUNICATIONS INC", "WBA_Global": "WALGREENS BOOTS ALLIANCE INC",
-             "WalmartInc": "WALMART INC", "WellsFargo": "WELLS FARGO & CO", "world_fuel": "WORLD FUEL SERVICES CORP"
+             "WalmartInc": "WALMART INC", "WellsFargo": "WELLS FARGO & CO",
             }
 
 combined_accounts = dict()
@@ -57,6 +57,8 @@ empty_ceo_accounts = {"larryculpjr": "GENERAL ELECTRIC CO", "DavidSolomon": "GOL
                       "BruceDBroussard": "HUMANA INC", "BobSwan": "INTEL CORP",
                       "TysonFoodsCEO": "TYSON FOODS INC  -CL A", "CarolBTome": "UNITED PARCEL SERVICE INC",
                       }
+
+empty_company_accounts = {"Apple": "APPLE INC", "world_fuel": "WORLD FUEL SERVICES CORP"}
 
 # Interesting Notes:
 # GOOG has public policy team (@googlepubpolicy)

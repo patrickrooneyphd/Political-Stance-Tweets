@@ -21,8 +21,8 @@ csv_file = 'tweets_df_raw.csv'
 tweet_data = []
 
 column_labels = ['date', 'tweet_id', 'text', 'replies', 'retweets', 'likes',
-                 'quotes', 'media'
-                 'source_label', 'username', 'compustat_company',
+                 'quotes', 'media',
+                 'source_label', 'username', 'ceo_account', 'compustat_company',
                  'user_join_date', 'user_followers', 'user_friends', 'user_statuses',
                  'user_favorites', 'user_listed', 'user_media',
                  ]
@@ -104,9 +104,14 @@ def json_to_df(load_file, out_file):
             media = (t['media'][0]['type'])
         else:
             media = 'null'
+        if t['user']['username'] in ceos.keys():
+            ceo_account = 1
+        else:
+            ceo_account = 0
         tweet_data.append([t['date'], t['id'], t['content'], t['replyCount'], t['retweetCount'], t['likeCount'],
                            t['quoteCount'], media,
-                           t['sourceLabel'], t['user']['username'], combined_accounts[t['user']['username']],
+                           t['sourceLabel'], t['user']['username'], ceo_account,
+                           combined_accounts[t['user']['username']],
                            t['user']['created'], t['user']['followersCount'], t['user']['friendsCount'],
                            t['user']['statusesCount'], t['user']['favouritesCount'], t['user']['listedCount'],
                            t['user']['mediaCount']
@@ -120,8 +125,8 @@ def json_to_df(load_file, out_file):
 
 
 if __name__ == '__main__':
-    # username_dict = create_username_commands()
+    username_dict = create_username_commands()
     change_to_dir('/data')
-    # scrape_data()
+    scrape_data()
     json_to_df(json_file, pkl_file)
 

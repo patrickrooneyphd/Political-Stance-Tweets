@@ -9,6 +9,7 @@ click==7.1.2
 conda==4.3.16
 cycler==0.10.0
 decorator==4.4.2
+emoji==1.2.0
 environment-kernels==1.1.1
 html5lib==1.1
 idna==2.10

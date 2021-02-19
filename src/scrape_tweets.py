@@ -3,7 +3,7 @@
 #
 # Author: Patrick Rooney
 # Desc: Scrapes all tweets from Fortune 100 CEOs and company accounts in three week window before and after
-# George Floyd killing in Minneapolis (May 25, 2020).
+# George Floyd incident in Minneapolis (May 25, 2020).
 #
 # Code Ref: https://www.kdnuggets.com/2016/06/mining-twitter-data-python-part-1.html
 #           https://medium.com/better-programming/how-to-scrape-tweets-with-snscrape-90124ed006af
@@ -28,7 +28,7 @@ column_labels = ['date', 'tweet_id', 'text', 'replies', 'retweets', 'likes',
                  ]
 
 
-# Set start and end Dates three weeks before/after G. Floyd Shooting (2020-05-04 to 2020-06-15)
+# Set start and end Dates three weeks before/after G. Floyd Incident (2020-05-04 to 2020-06-15)
 # Add in CLI command for each username
 # Create dictionary of usernames and username commands
 def create_username_commands(out_file=json_file):

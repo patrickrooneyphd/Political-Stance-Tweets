@@ -4,13 +4,14 @@ import os
 import matplotlib.pyplot as plt
 
 def set_project_root():
-    current = os.getcwd()
-    if "/notebooks" in current:
+    current_dir = os.getcwd()
+    subdirs = ['/data', '/src', '/notebooks', '/figures']
+    if any(x in current_dir for x in subdirs):
         os.chdir('..')
         root = os.getcwd()
         return root
     else: 
-        return current
+        return current_dir
 
     
 def change_dir(root, path_ext):
@@ -27,7 +28,7 @@ def change_dir(root, path_ext):
 
 # Saving images
 def save_image(fig_id, tight_layout=True, fig_extension="png", resolution=300):
-    ch_dir('/analysis/figures')
+    ch_dir('/figures')
     if tight_layout:
         plt.tight_layout()
     plt.savefig(fig_id, format=fig_extension, dpi=resolution)

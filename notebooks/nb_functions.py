@@ -38,7 +38,7 @@ def save_image(fig_id, tight_layout=True, fig_extension="png", resolution=300):
     
 #Plotting Word clouds
 def plot_cloud(wordcloud, title):
-    plt.figure(figsize = (8, 8), facecolor = None) 
+    plt.figure(figsize = (6, 6), facecolor = None) 
     plt.imshow(wordcloud) 
     plt.axis("off") 
     plt.tight_layout(pad = 0) 

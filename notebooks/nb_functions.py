@@ -3,6 +3,7 @@
 import os
 import matplotlib.pyplot as plt
 
+
 def set_project_root():
     current_dir = os.getcwd()
     subdirs = ['/data', '/src', '/notebooks', '/figures']

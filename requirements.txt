@@ -58,3 +58,4 @@ urllib3==1.26.2
 wcwidth==0.2.5
 webencodings==0.5.1
 wordcloud==1.8.1
+pytest~=6.2.4
